@@ -21,7 +21,7 @@ public:
 private:
     void setKosten(double kosten);
     double kosten = 0;
-
+    virtual void output(std::ostream& os) const;
 };
 
 

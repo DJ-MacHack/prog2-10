@@ -21,6 +21,7 @@ public:
 private:
     void setAufwand(double aufwand);
     double aufwand = 0;
+    virtual void output(std::ostream& os) const;
 };
 
 

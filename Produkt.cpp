@@ -19,3 +19,8 @@ void Produkt::setKosten(double kosten) {
         throw std::logic_error("Kosten >= 0 Euro!");
     }
 }
+
+void Produkt::output(std::ostream &os) const {
+    Projektbestandteil::output(os);
+    os << "Kosten: " << this->kosten << " Euro" << std::endl;
+}

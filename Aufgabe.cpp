@@ -19,3 +19,8 @@ void Aufgabe::setAufwand(double aufwand) {
         throw std::logic_error("Aufwand >= 0h!");
     }
 }
+
+void Aufgabe::output(std::ostream& os) const{
+    Projektbestandteil::output(os);
+    os << "Aufwand: " << this->aufwand << " Stunden" << std::endl;
+}

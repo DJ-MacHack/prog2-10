@@ -31,3 +31,16 @@ void Projektbestandteil::setName(const std::string name) {
 void Projektbestandteil::setBeschreibung(std::string beschreibung) {
     this->beschreibung = beschreibung;
 }
+
+std::ostream &operator<<(std::ostream &os, const Projektbestandteil &projektbestandteil) {
+    projektbestandteil.output(os);
+    return os;
+}
+
+Projektbestandteil::~Projektbestandteil() {
+
+}
+
+void Projektbestandteil::output(std::ostream &os) const{
+    os << "Name: " << this->name << " Beschreibung: " << this->beschreibung << std::endl;
+}

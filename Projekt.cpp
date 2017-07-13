@@ -56,3 +56,13 @@ Projekt::~Projekt() {
         delete(array[i]);
     }
 }
+
+void Projekt::output(std::ostream &os) const {
+    Projektbestandteil::output(os);
+    os << "Stundensatz: " << this->stundensatz << endl;
+    os << "Unterprojekte: " << endl;
+    for(int i = 0; i < array.size(); i++){
+        os << array.at(i) << endl;
+    }
+    os << "Unterprojekte von " << this->getName() << " Ende" << endl;
+}

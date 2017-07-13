@@ -27,6 +27,7 @@ private:
     double stundensatz = 0;
     void refill(int i);
     std::array<Projektbestandteil*, 100> array;
+    virtual void output(std::ostream& os) const;
 };
 
 
