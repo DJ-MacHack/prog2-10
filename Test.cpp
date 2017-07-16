@@ -11,10 +11,17 @@
 
 using namespace std;
 
+/**
+ * default constructor starts with project
+ */
 Test::Test() {
     newProject();
 }
 
+/**
+ * adds project
+ * @param pro
+ */
 void Test::addProject(Projekt* pro) {
     string name, beschreibung = "";
     double stunden = 0;
@@ -29,6 +36,10 @@ void Test::addProject(Projekt* pro) {
     start(neu);
 }
 
+/**
+ * adds product
+ * @param pro
+ */
 void Test::addProduct(Projekt* pro) {
     string name, beschreibung = "";
     double kosten = 0;
@@ -42,6 +53,10 @@ void Test::addProduct(Projekt* pro) {
     pro->add(neu);
 }
 
+/**
+ * adds task
+ * @param pro
+ */
 void Test::addTask(Projekt* pro) {
     string name, beschreibung = "";
     double stunden = 0;
@@ -55,6 +70,10 @@ void Test::addTask(Projekt* pro) {
     pro->add(neu);
 }
 
+/**
+ * deletes something
+ * @param pro
+ */
 void Test::del(Projekt* pro) {
     cout << "Was soll geloescht werden?" << endl;
     string name = "";
@@ -62,10 +81,16 @@ void Test::del(Projekt* pro) {
     pro->del(name);
 }
 
+/**
+ * prints the projects
+ */
 void Test::print() {
     cout << *this->pro << endl;
 }
 
+/**
+ * adds the 1st project
+ */
 void Test::newProject() {
     string name, beschreibung = "";
     double stunden = 0;
@@ -79,10 +104,17 @@ void Test::newProject() {
     this->pro = neu;
 }
 
+/**
+ * start with 1st project
+ */
 void Test::start() {
     start(this->pro);
 }
 
+/**
+ * starts a project
+ * @param projekt
+ */
 void Test::start(Projekt* projekt) {
     FunktionsTyp funktion = WEITER;
     do {
@@ -102,6 +134,10 @@ void Test::start(Projekt* projekt) {
     } while (funktion != ENDE);
 }
 
+/**
+ * reads in with cin
+ * @return
+ */
 Test::FunktionsTyp Test::einlesenFunktion() {
     cout << ADDPROJECT << ": Projekt anlegen; "
          << ADDPRODUCT << ": Produkt einfuegen; "
@@ -120,6 +156,11 @@ Test::FunktionsTyp Test::einlesenFunktion() {
     }
 }
 
+/**
+ * runs the commands
+ * @param funktion
+ * @param pro
+ */
 void Test::ausfuehrenFunktion(Test::FunktionsTyp funktion, Projekt* pro) {
     switch (funktion) {
         case ADDPRODUCT:

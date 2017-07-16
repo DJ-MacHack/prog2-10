@@ -8,10 +8,20 @@
 #include "Projekt.h"
 using namespace std;
 
+/**
+ * Default Constructor
+ * @param name
+ * @param beschreibung
+ * @param stundensatz
+ */
 Projekt::Projekt(const string& name, const string& beschreibung, const double& stundensatz) : Projektbestandteil(name, beschreibung) {
     setStundensatz(stundensatz);
 }
 
+/**
+ * Sets hours
+ * @param x
+ */
 void Projekt::setStundensatz(double x) {
     if (x > 0){
         this->stundensatz = x;
@@ -21,15 +31,23 @@ void Projekt::setStundensatz(double x) {
     }
 }
 
+/**
+ * Adds anouther part to the project
+ * @param teil
+ */
 void Projekt::add(Projektbestandteil *teil) {
     if(this->count < array.max_size()){
         array[this->count] = teil;
         this->count++;
     } else {
-        throw length_error("Array has max size: " + array.max_size());
+        throw length_error("Array has max size: 1000");
     }
 }
 
+/**
+ * deletes parts
+ * @param name
+ */
 void Projekt::del(string name) {
     bool deleted = false;
     for(int i = 0; i < this->count; i++){
@@ -46,6 +64,10 @@ void Projekt::del(string name) {
     }
 }
 
+/**
+ * makes the array clean again
+ * @param i
+ */
 void Projekt::refill(int i) {
     int size = this->count;
     for(int m = i; m < size-1; m++){
@@ -53,12 +75,20 @@ void Projekt::refill(int i) {
     }
 }
 
+/**
+ * destructor
+ */
 Projekt::~Projekt() {
     for(int i = 0; i < this->count; i++){
         delete(array[i]);
     }
 }
 
+/**
+ * calculates costs
+ * @param costs
+ * @return
+ */
 double Projekt::costs(double costs) const {
     double kosten = 0;
     for(int i = 0; i < this->count; i++){
@@ -67,6 +97,10 @@ double Projekt::costs(double costs) const {
     return kosten;
 }
 
+/**
+ * cout
+ * @param os
+ */
 void Projekt::output(std::ostream &os) const {
     Projektbestandteil::output(os);
     os << "Stundensatz: " << this->stundensatz << endl;
