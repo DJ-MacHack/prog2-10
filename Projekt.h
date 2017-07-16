@@ -21,12 +21,14 @@ public:
     void add(Projektbestandteil* teil);
     void del(std::string name);
     virtual ~Projekt();
+    virtual double costs(double costs) const;
 
 private:
     void setStundensatz(double x);
     double stundensatz = 0;
+    int count = 0;
     void refill(int i);
-    std::array<Projektbestandteil*, 100> array;
+    std::array<Projektbestandteil*, 1000> array;
     virtual void output(std::ostream& os) const;
 };
 

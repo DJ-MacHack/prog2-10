@@ -17,6 +17,7 @@ public:
     double getKosten() const {
         return this->kosten;
     }
+    virtual double costs(double costs) const;
 
 private:
     void setKosten(double kosten);

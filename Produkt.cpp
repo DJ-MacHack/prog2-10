@@ -24,3 +24,9 @@ void Produkt::output(std::ostream &os) const {
     Projektbestandteil::output(os);
     os << "Kosten: " << this->kosten << " Euro" << std::endl;
 }
+
+double Produkt::costs(double costs) const {
+    return this->getKosten();
+}
+
+

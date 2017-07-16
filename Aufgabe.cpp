@@ -24,3 +24,7 @@ void Aufgabe::output(std::ostream& os) const{
     Projektbestandteil::output(os);
     os << "Aufwand: " << this->aufwand << " Stunden" << std::endl;
 }
+
+double Aufgabe::costs(double costs) const {
+    return costs*this->getAufwand();
+}

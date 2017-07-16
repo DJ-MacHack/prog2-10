@@ -9,7 +9,27 @@
 #define PROG2_10_TEST_H
 
 
+#include "Projekt.h"
+
 class Test {
+    enum FunktionsTyp {WEITER, ADDPROJECT, ADDPRODUCT, ADDTASK,
+        DELETE, PRINT, ENDE = 9};
+public:
+    Test();
+
+    void addProject(Projekt* pro);
+    void addProduct(Projekt* pro);
+    void addTask(Projekt* pro);
+    void del(Projekt* pro);
+    void print();
+    void start(Projekt* pro);
+    void start();
+    FunktionsTyp einlesenFunktion();
+    void ausfuehrenFunktion(FunktionsTyp funktion, Projekt* pro);
+
+private:
+    void newProject();
+    Projekt* pro;
 
 };
 

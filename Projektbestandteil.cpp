@@ -41,6 +41,11 @@ Projektbestandteil::~Projektbestandteil() {
 
 }
 
+double Projektbestandteil::costs(double cost) const {
+    return cost;
+}
+
 void Projektbestandteil::output(std::ostream &os) const{
-    os << "Name: " << this->name << " Beschreibung: " << this->beschreibung << std::endl;
+    os << "Name: " << this->name << std::endl;
+    os << "Beschreibung: " << this->beschreibung << std::endl;
 }

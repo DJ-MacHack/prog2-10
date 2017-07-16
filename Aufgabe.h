@@ -17,6 +17,7 @@ public:
     double getAufwand() const{
         return this->aufwand;
     }
+    virtual double costs(double costs) const;
 
 private:
     void setAufwand(double aufwand);
