@@ -108,7 +108,7 @@ Test::FunktionsTyp Test::einlesenFunktion() {
          << ADDTASK << ": Aufgabe einfuegen; "
          << DELETE << ": etwas loeschen; "
          << PRINT << ": auf Konsole ausgeben; "
-         << ENDE << ": beenden -> ";
+         << ENDE << ": Projekt bearbeiten beenden -> ";
     int funktion;
     if (cin) {
         cin >> funktion;
